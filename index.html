@@ -14,6 +14,42 @@
       --text: #222222;
       --muted: #555555;
       --border: #d0d7de;
+      --top-bar-bg: #e9ecef;
+      --surface-soft: #fafbfc;
+      --surface-hover: #f1f5f9;
+      --input-bg: #ffffff;
+      --track-bg: #e2e8f0;
+      --link-color: #1f3a60;
+      --badge-bg: #e2e8f0;
+      --badge-text: #1e293b;
+      --badge-success-bg: #dcfce7;
+      --badge-success-text: #15803d;
+      --badge-muted-bg: #f1f5f9;
+      --badge-muted-text: #475569;
+      --error-color: #b91c1c;
+      --bar-primary: #1f3a60;
+    }
+
+    body.dark-theme {
+      --bg: #0b1120;
+      --card: #131d2f;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: #283548;
+      --top-bar-bg: #0f172a;
+      --surface-soft: #1a263b;
+      --surface-hover: #22314a;
+      --input-bg: #0f172a;
+      --track-bg: #263348;
+      --link-color: #60a5fa;
+      --badge-bg: #24334a;
+      --badge-text: #cbd5e1;
+      --badge-success-bg: #143622;
+      --badge-success-text: #86efac;
+      --badge-muted-bg: #24334a;
+      --badge-muted-text: #cbd5e1;
+      --error-color: #f87171;
+      --bar-primary: #2b5996;
     }
 
     * {
@@ -33,7 +69,7 @@
 
     /* Верхня технічна панель */
     .top-panel {
-      background-color: #e9ecef;
+      background-color: var(--top-bar-bg);
       border-bottom: 1px solid var(--border);
       padding: 6px 20px;
       font-size: 13px;
@@ -46,6 +82,12 @@
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    .top-panel-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     /* Головна шапка */
@@ -89,6 +131,8 @@
       border-radius: 3px 0 0 3px;
       outline: none;
       font-size: 13px;
+      background-color: var(--input-bg);
+      color: var(--text);
     }
 
     .search-container button {
@@ -140,7 +184,7 @@
     }
 
     .breadcrumb-trail a {
-      color: var(--primary);
+      color: var(--link-color);
       text-decoration: underline;
       cursor: pointer;
     }
@@ -166,10 +210,15 @@
       gap: 16px;
     }
 
+    body.dark-theme .banner-highlight {
+      background-color: #142640;
+      border: 1px solid var(--border);
+    }
+
     .tag-badge {
       display: inline-block;
-      background-color: #e2e8f0;
-      color: #1e293b;
+      background-color: var(--badge-bg);
+      color: var(--badge-text);
       font-size: 11px;
       font-weight: bold;
       padding: 3px 7px;
@@ -215,13 +264,13 @@
 
     /* Біла кнопка: другорядна дія */
     .action-btn-light {
-      background-color: #ffffff;
+      background-color: var(--card);
       border-color: var(--border);
       color: var(--text);
     }
 
     .action-btn-light:hover {
-      background-color: #f1f5f9;
+      background-color: var(--surface-hover);
       border-color: var(--border);
     }
 
@@ -268,25 +317,25 @@
 
     .admin-question-box {
       border: 1px solid var(--border);
-      background-color: #ffffff;
+      background-color: var(--card);
       padding: 12px;
       border-radius: 3px;
       margin-bottom: 10px;
     }
 
     .tag-badge-success {
-      background-color: #dcfce7;
-      color: #15803d;
+      background-color: var(--badge-success-bg);
+      color: var(--badge-success-text);
     }
 
     .tag-badge-muted {
-      background-color: #f1f5f9;
-      color: #475569;
+      background-color: var(--badge-muted-bg);
+      color: var(--badge-muted-text);
     }
 
     .form-error {
       display: none;
-      color: #b91c1c;
+      color: var(--error-color);
       font-size: 12px;
       font-weight: bold;
       margin-top: 10px;
@@ -294,7 +343,7 @@
 
     /* Підрозділи аналітики */
     .sub-panel {
-      background-color: #fafbfc;
+      background-color: var(--surface-soft);
       border: 1px dashed var(--border);
       border-radius: 4px;
       padding: 18px;
@@ -325,7 +374,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 13px;
-      background-color: #ffffff;
+      background-color: var(--card);
     }
 
     .data-table th, .data-table td {
@@ -336,8 +385,13 @@
     }
 
     .data-table th {
-      background-color: #f1f5f9;
+      background-color: var(--surface-hover);
       font-size: 12px;
+    }
+
+    .data-table select {
+      background-color: var(--input-bg);
+      color: var(--text);
     }
 
     .data-table .tag-badge {
@@ -346,7 +400,7 @@
 
     .doc-row {
       padding: 10px;
-      background: #ffffff;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 3px;
       display: flex;
@@ -367,18 +421,18 @@
     .quick-box {
       border: 1px solid var(--border);
       border-radius: 4px;
-      background-color: #ffffff;
+      background-color: var(--card);
       padding: 15px;
       cursor: pointer;
     }
 
     .quick-box:hover {
-      border-color: var(--primary);
-      background-color: #fafbfc;
+      border-color: var(--link-color);
+      background-color: var(--surface-soft);
     }
 
     .quick-box h4 {
-      color: var(--primary);
+      color: var(--link-color);
       margin-bottom: 6px;
       font-size: 15px;
     }
@@ -394,7 +448,8 @@
       padding: 6px 12px;
       border: 1px solid var(--border);
       border-radius: 3px;
-      background-color: #ffffff;
+      background-color: var(--card);
+      color: var(--text);
       font-size: 13px;
       cursor: pointer;
     }
@@ -414,7 +469,7 @@
     .data-card {
       border: 1px solid var(--border);
       border-radius: 4px;
-      background-color: #ffffff;
+      background-color: var(--card);
       padding: 16px;
       display: flex;
       flex-direction: column;
@@ -434,7 +489,7 @@
 
     /* Інтерфейс заповнення анкети */
     .progress-bar-shell {
-      background-color: #e2e8f0;
+      background-color: var(--track-bg);
       border-radius: 3px;
       height: 8px;
       width: 100%;
@@ -473,12 +528,13 @@
       border: 1px solid var(--border);
       border-radius: 3px;
       cursor: pointer;
-      background: #ffffff;
+      background: var(--card);
+      color: var(--text);
       font-size: 14px;
     }
 
     .answer-row:hover {
-      background-color: #f8fafc;
+      background-color: var(--surface-soft);
     }
 
     /* Графіки та відсотки */
@@ -502,14 +558,14 @@
     }
 
     .stat-bar-container {
-      background-color: #e2e8f0;
+      background-color: var(--track-bg);
       height: 20px;
       border-radius: 3px;
       overflow: hidden;
     }
 
     .stat-bar-value {
-      background-color: var(--primary);
+      background-color: var(--bar-primary);
       height: 100%;
       color: #ffffff;
       font-size: 11px;
@@ -539,6 +595,8 @@
       border-radius: 3px;
       font-size: 13px;
       outline: none;
+      background-color: var(--input-bg);
+      color: var(--text);
     }
 
     .view-section {
@@ -556,6 +614,11 @@
       font-size: 12px;
       margin-top: auto;
       border-top: 1px solid #334155;
+    }
+
+    body.dark-theme footer {
+      background-color: #090e1a;
+      border-top-color: var(--border);
     }
 
     .footer-wrap {
@@ -729,8 +792,17 @@
       .top-panel, .main-header, .menu-nav, .breadcrumb-trail, footer, button {
         display: none !important;
       }
-      body {
+      body, body.dark-theme {
+        --bg: #ffffff;
+        --card: #ffffff;
+        --text: #222222;
+        --muted: #555555;
+        --border: #d0d7de;
+        --surface-soft: #fafbfc;
+        --track-bg: #e2e8f0;
+        --bar-primary: #1f3a60;
         background: #ffffff;
+        color: #222222;
       }
     }
   </style>
@@ -746,7 +818,10 @@
     </div>
     <div class="top-panel-right">
       <span id="accountLabel">Статус: Гість</span>
-      <button class="action-btn action-btn-light action-btn-sm" id="topCabinetBtn" onclick="navigateToTab('cabinet')">Вхід / Кабінет</button>
+      <div class="top-panel-actions">
+        <button class="action-btn action-btn-light action-btn-sm" id="themeToggleBtn" onclick="toggleDarkTheme()" aria-pressed="false">Темна тема</button>
+        <button class="action-btn action-btn-light action-btn-sm" id="topCabinetBtn" onclick="navigateToTab('cabinet')">Вхід / Кабінет</button>
+      </div>
     </div>
   </div>
 
@@ -897,7 +972,7 @@
 
           <div class="stat-row">
             <div class="stat-text"><span>Microsoft Teams (коледжі та ЗВО)</span> <span>58%</span></div>
-            <div class="stat-bar-container"><div class="stat-bar-value" style="width: 58%; background-color: var(--primary);">58%</div></div>
+            <div class="stat-bar-container"><div class="stat-bar-value" style="width: 58%; background-color: var(--bar-primary);">58%</div></div>
           </div>
           <div class="stat-row">
             <div class="stat-text"><span>Google Meet / Zoom</span> <span>34%</span></div>
@@ -916,7 +991,7 @@
 
           <div class="stat-row">
             <div class="stat-text"><span>Регулярно (щотижня)</span> <span>47%</span></div>
-            <div class="stat-bar-container"><div class="stat-bar-value" style="width: 47%; background-color: var(--primary);">47%</div></div>
+            <div class="stat-bar-container"><div class="stat-bar-value" style="width: 47%; background-color: var(--bar-primary);">47%</div></div>
           </div>
           <div class="stat-row">
             <div class="stat-text"><span>Епізодично</span> <span>36%</span></div>
@@ -1013,7 +1088,7 @@
           <h3 style="font-size: 17px; margin-bottom: 6px;">Мої пройдені анкети</h3>
           <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">Історія участі користувача в опитуваннях соціологічної платформи:</p>
           <div id="surveyHistoryList">
-            <div style="padding: 14px; background-color: #fafbfc; border: 1px dashed var(--border); border-radius: 3px; font-size: 12px; color: var(--muted); text-align: center;">
+            <div style="padding: 14px; background-color: var(--surface-soft); border: 1px dashed var(--border); border-radius: 3px; font-size: 12px; color: var(--muted); text-align: center;">
               Записів не знайдено. Пройдіть анкету для відображення в історії.
             </div>
           </div>
@@ -1461,7 +1536,29 @@
       if (phoneInput) phoneInput.value = PHONE_TEMPLATE;
     }
 
+    function applyTheme(theme) {
+      const isDark = theme === 'dark';
+      document.body.classList.toggle('dark-theme', isDark);
+      const btn = document.getElementById('themeToggleBtn');
+      if (btn) {
+        btn.innerText = isDark ? 'Світла тема' : 'Темна тема';
+        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      }
+      localStorage.setItem('dumka_theme', isDark ? 'dark' : 'light');
+    }
+
+    function toggleDarkTheme() {
+      const isDark = document.body.classList.contains('dark-theme');
+      applyTheme(isDark ? 'light' : 'dark');
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem('dumka_theme');
+      applyTheme(saved === 'dark' ? 'dark' : 'light');
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
+      initTheme();
       renderSurveyCards();
       refreshHistoryList();
       updateAccountDisplay();
@@ -1686,7 +1783,7 @@
     }
 
     /* ---------- Підрахунок та відображення результатів ---------- */
-    const barColors = ['var(--primary)', 'var(--accent)', '#0284c7', '#b45309', '#64748b'];
+    const barColors = ['var(--bar-primary)', 'var(--accent)', '#0284c7', '#b45309', '#64748b'];
 
     function pct(part, total) {
       return total ? Math.round(part / total * 100) : 0;
@@ -1771,7 +1868,7 @@
         'Ключові показники за результатами опитування респондентів:';
 
       const summaryBars = [
-        { label: 'Використовують Teams щодня на всіх парах', val: st.daily, color: 'var(--primary)' },
+        { label: 'Використовують Teams щодня на всіх парах', val: st.daily, color: 'var(--bar-primary)' },
         { label: 'Стабільність звуку та відео оцінили як високу', val: st.stable, color: '#0284c7' },
         { label: 'Відзначили корисність збереження записів занять', val: st.recordings, color: 'var(--accent)' },
         { label: 'Задоволені організацією онлайн-занять загалом', val: st.positive, color: '#b45309' }
@@ -1810,7 +1907,7 @@
       if (!box) return;
 
       if (localHistory.length === 0) {
-        box.innerHTML = '<div style="padding: 14px; background-color: #fafbfc; border: 1px dashed var(--border); border-radius: 3px; font-size: 12px; color: var(--muted); text-align: center;">Записів не знайдено. Пройдіть анкету для відображення в історії.</div>';
+        box.innerHTML = '<div style="padding: 14px; background-color: var(--surface-soft); border: 1px dashed var(--border); border-radius: 3px; font-size: 12px; color: var(--muted); text-align: center;">Записів не знайдено. Пройдіть анкету для відображення в історії.</div>';
         return;
       }
 
@@ -1820,7 +1917,7 @@
           ? `<div style="font-size: 11px; color: var(--muted); margin-top: 2px;">Відповіді: ${escapeHtml(summary)}</div>`
           : '';
         return `
-        <div style="padding: 10px; border: 1px solid var(--border); border-radius: 3px; margin-bottom: 8px; background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+        <div style="padding: 10px; border: 1px solid var(--border); border-radius: 3px; margin-bottom: 8px; background-color: var(--card); display: flex; justify-content: space-between; align-items: center; gap: 8px;">
           <div>
             <div style="font-size: 13px; font-weight: bold;">${escapeHtml(item.name)}</div>
             <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">Напрям: ${escapeHtml(item.theme)} | Час: ${escapeHtml(item.date)}</div>
@@ -1947,7 +2044,7 @@
 
       if (activeUser) {
         const displayLogin = activeUser.name || activeUser.email || 'admin';
-        label.innerHTML = 'Користувач: <strong>' + escapeHtml(displayLogin) + '</strong> (<a href="javascript:void(0)" onclick="signOutUser()" style="color:var(--primary);">Вийти</a>)';
+        label.innerHTML = 'Користувач: <strong>' + escapeHtml(displayLogin) + '</strong> (<a href="javascript:void(0)" onclick="signOutUser()" style="color:var(--link-color);">Вийти</a>)';
         topBtn.innerText = 'Кабінет';
         authCard.style.display = 'none';
         profileCard.style.display = 'block';
@@ -1989,7 +2086,7 @@
       box.className = 'admin-question-box';
       box.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <strong class="q-box-label" style="font-size: 12px; color: var(--primary);">Питання ${idx}</strong>
+          <strong class="q-box-label" style="font-size: 12px; color: var(--link-color);">Питання ${idx}</strong>
           <button type="button" class="action-btn action-btn-danger action-btn-sm" onclick="adminRemoveQuestionField(this)">Видалити</button>
         </div>
         <div class="admin-form-grid" style="margin-bottom: 8px;">
@@ -2065,7 +2162,7 @@
 
       const respBox = document.getElementById('adminResponsesBox');
       if (localHistory.length === 0) {
-        respBox.innerHTML = '<div style="padding: 14px; background-color: #ffffff; border: 1px dashed var(--border); border-radius: 3px; font-size: 12px; color: var(--muted); text-align: center;">Журнал порожній.</div>';
+        respBox.innerHTML = '<div style="padding: 14px; background-color: var(--surface-soft); border: 1px dashed var(--border); border-radius: 3px; font-size: 12px; color: var(--muted); text-align: center;">Журнал порожній.</div>';
       } else {
         const rows = localHistory.map((r, idx) => {
           const summary = formatAnswersSummary(r.answers) || '-';
